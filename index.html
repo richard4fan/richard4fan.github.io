@@ -145,6 +145,95 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/23/hexoAndGithubAsBlog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Richard Fan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不太胖的胖子">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/23/hexoAndGithubAsBlog/" class="post-title-link" itemprop="url">hexoAndGithubAsBlog</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-23 17:12:53 / 修改时间：17:26:05" itemprop="dateCreated datePublished" datetime="2022-01-23T17:12:53+08:00">2022-01-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="利用github和hexo搭建个人博客"><a href="#利用github和hexo搭建个人博客" class="headerlink" title="利用github和hexo搭建个人博客"></a>利用github和hexo搭建个人博客</h2><p>github是程序员的利器，github的pages功能来搭建个人的技术博客是再合适不过了</p>
+<h3 id="预置条件"><a href="#预置条件" class="headerlink" title="预置条件"></a>预置条件</h3><ul>
+<li>已经有github账号</li>
+<li>已经安装了git</li>
+<li>如果想使用自己的域名来访问的话，必须得有自己的域名</li>
+</ul>
+<h3 id="first"><a href="#first" class="headerlink" title="first"></a>first</h3><p>首先你得有一个github账号，假设用户名是xyz，那么首先你需要在github上创建一个repository，名字必须为xyz.github.io</p>
+<h3 id="second"><a href="#second" class="headerlink" title="second"></a>second</h3><p>安装nodejs和hexo</p>
+<h4 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h4><ol>
+<li>直接访问<a target="_blank" rel="noopener" href="https://nodejs.org/en/">node.js官网</a>，下载最新的稳定版本</li>
+<li>然后打开安装文件，一路下一步就可以了</li>
+<li>安装完检查一下是否安装成功<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm version</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><ol>
+<li><p>创建一个路径用于存储hexo及博客的内容，假设是D:\blog</p>
+</li>
+<li><p>cmd切换到D:\blog路径下</p>
+</li>
+<li><p>执行安装hexo命令</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>安装完成后，初始化博客</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>生成静态文件，并启动<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></li>
+<li>这时已经在本地localhost:4000上启动了服务，直接访问检查是否访问成功</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/23/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -277,7 +366,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
