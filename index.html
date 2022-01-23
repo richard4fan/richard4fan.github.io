@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-01-23 20:23:06 / 修改时间：20:23:35" itemprop="dateCreated datePublished" datetime="2022-01-23T20:23:06+08:00">2022-01-23</time>
+              <time title="创建时间：2022-01-23 20:23:06 / 修改时间：20:56:01" itemprop="dateCreated datePublished" datetime="2022-01-23T20:23:06+08:00">2022-01-23</time>
             </span>
 
           
@@ -184,7 +184,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p>在golang中要做参数校验，仔细google了，发现有一个开源的库非常好用，那就是<a target="_blank" rel="noopener" href="https://github.com/go-playground/validator">go-playground/validator</a>，通过在结构体中增加标签的方式来实现对结构的校验</p>
+<h3 id="校验struct"><a href="#校验struct" class="headerlink" title="校验struct"></a>校验struct</h3><p>使用validator对struct进行校验时，需要在struct定义中增加validate的tag，比如定义一个结构体</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type Test struct &#123;</span><br><span class="line">    Name string</span><br><span class="line">    Age  uint8 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们需要校验Name的字符串长度大于5，小于10，Age的年龄大于0，小于100，则我们可以在定义结构体时增加validate的tag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type Test struct &#123;</span><br><span class="line">    Name string `validate:&quot;min=5,max=10&quot;`</span><br><span class="line">    Aget uint8  `validate:&quot;gte=0,lte=100&quot;`</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
 
@@ -361,6 +367,10 @@
           <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
