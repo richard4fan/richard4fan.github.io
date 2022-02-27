@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-02-27 12:22:03" itemprop="dateModified" datetime="2022-02-27T12:22:03+08:00">2022-02-27</time>
+                <time title="修改时间：2022-02-27 22:32:04" itemprop="dateModified" datetime="2022-02-27T22:32:04+08:00">2022-02-27</time>
               </span>
 
           
@@ -203,6 +203,14 @@
 
 <p>DEK-Info表明了加密的算法和使用的ivec向量，如我们刚才使用的是aes256cbc算法，ivec是随机生成的</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># ca.key文件的头信息</span><br><span class="line">Proc-Type: 4,ENCRYPTED</span><br><span class="line">DEK-Info: AES-256-CBC,9BD150E8DEFED31B632C819A7E8F28C7</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-生成证书签名请求CSR"><a href="#2-生成证书签名请求CSR" class="headerlink" title="2. 生成证书签名请求CSR"></a>2. 生成证书签名请求CSR</h4><p>有了私钥文件后，我们可以生成证书签名请求CSR</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -key ca.key -out ca.csr</span><br></pre></td></tr></table></figure>
+<p>依次输入国家、地区、城市、组织、单位、Common Name 和email</p>
+<h4 id="3-生成自签名CA证书"><a href="#3-生成自签名CA证书" class="headerlink" title="3. 生成自签名CA证书"></a>3. 生成自签名CA证书</h4><p>有了私钥文件和csr文件后，可以通过openssl签发证书</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -req -days 3650 -in ca.csr -signkey ca.key -out ca.crt</span><br></pre></td></tr></table></figure>
+
+<p>days参数是证书的有效期，一般ca证书的有效期都比较长</p>
 
       
     </div>
